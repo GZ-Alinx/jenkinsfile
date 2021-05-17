@@ -1,6 +1,8 @@
 #!/groovy
 // jenkins共享库引入，在jenkns中配置
-@Library('github@master')
+//@Library('github@master')
+@Library('jenkinslib@master')
+
 import hudson.model.*
 
 
