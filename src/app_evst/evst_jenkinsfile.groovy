@@ -79,8 +79,7 @@ pipeline {
                     println "具体实现方法"
                     // env.action = input message: "提示",ok:'确认',parameters:[具体参数类型];
                     // 相当于将后面的值赋给签名的变量
-                    env.action = input message: "提示",ok:'确认',parameters:[
-                    choice(description: "说明", name: "请选择", choices:['yes','no'],trim:false))
+                    env.action = input message: "提示",ok:'确认',parameters:[choice(description: "说明", name: "请选择", choices:['yes','no'],trim:false)]
                 }
             }
         }
