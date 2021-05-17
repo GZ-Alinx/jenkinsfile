@@ -8,7 +8,6 @@ import hudson.model.*
 
 // 共享库方法引用，结合jenkins共享库引入
 def mail =  new org.devops.mail()
-def read_json = new org.devops.Jsonio()
 
 
 pipeline {
@@ -53,8 +52,9 @@ pipeline {
         stage("配置读取"){
             steps{
                 script {
+                    json = load "$WORKSPACE/src/app_evst/script/read_json.groovy"
                     json_file = "$WORKSPACE/src/app_evst/script/config.json"
-                    def config = read_json.ToFile_read_json(json_file)
+                    def config = json.ToFile_read_json(json_file)
                     println(config["host"]["hostip"])
                     println(config["host"]["port"])
                     println(config["host"]["password"])
