@@ -3,7 +3,7 @@ import hudson.model.*;
 
 // 文件中读取json到字符串
 def ToFile_read_json(filePath) {
-	def propMap = readJSON file : filePath
+	def propMap = readJSON text: filePath
 	propMap.each {
 		it.key + "=" + it.value
 	}
@@ -11,7 +11,7 @@ def ToFile_read_json(filePath) {
 
 // 字符串json中读取到字符串
 def ToText_read_json(json_String) {
-	def propMap = readJSON text : json_String
+	def propMap = readJSON text: json_String
 	propMap.each {
 		it.key + "=" + it.value
 	}
